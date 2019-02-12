@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BrandNewController!{% endblock %}
+
+{% block body %}
+
+<h1>Cadastro de Cliente</h1>
+
+{% for erro in erros %}
+{{ erro }} <br />
+{% endfor %}
+
+<form method="post">
+Nome:
+<input type="text" name="nome" value="{{ cliente.nome }}">
+<br />
+E-mail:
+<input type="text" name="email" value="{{ cliente.email }}">
+<br />
+Senha:
+<input type="password" name="senha" value="{{ cliente.senha }}">
+<br />
+Confirmação de Senha:
+<input type="password" name="senhaConfirmacao" value="{{ senhaConfirmacao }}">
+
+<br />
+<input type="submit" value="Salvar">
+</form>
+{% endblock %}

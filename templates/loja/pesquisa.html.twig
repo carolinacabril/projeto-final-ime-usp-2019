@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BrandNewController!{% endblock %}
+
+{% block body %}
+<h2>Pesquisa: {{texto}}</h2>
+
+
+
+<table border="1" width="100%">
+	<thead>
+	<tr>
+		<th>Imagem</th>
+		<th>Nome do Produto</th>
+		<th>Preço</th>
+	</tr>
+	<thead>
+	<tbody>
+
+		{% for produto in produtos %}
+
+			<tr>
+				<td><img src="/images/{{ produto.imagem }}" width="50"></td>
+				<td>{{ produto.nome }}</td>
+				<td>R$ {{ produto.preco }}</td>
+			</tr>
+
+		{% endfor %}
+
+	</tbody>
+</table>
+
+{% endblock  %}
